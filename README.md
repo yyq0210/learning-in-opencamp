@@ -1,7 +1,7 @@
 # learning-in-opencamp
 OpenCamp 训练营通用学习工具
 
-这是一个用于在本地对多种编程课程练习进行评测的工具，支持 Rust、C++ 等多种语言的课程。
+这是一个用于在本地对多种编程课程练习进行评测的工具，支持 Rust、C++ 等多种语言的课程，无需依赖 GitHub Actions。
 
 ## 功能特点
 
@@ -95,7 +95,9 @@ cargo xtask eval --verbose
 #### 评测指定课程
 ```bash
 # 评测指定课程
-cargo xtask eval --course learning-lm-rs
+cargo xtask eval --course learning-cxx
+
+cargo xtask eval --course rustlings
 
 # 评测指定路径的课程
 cargo xtask eval --path ./my-exercises --verbose
@@ -185,8 +187,8 @@ A: 目前支持 learning-lm-rs、learning-cxx、rustlings 等，可以通过扩�
 
 ```bash
 # 克隆项目
-git clone https://github.com/yourusername/learning-in-camp.git
-cd learning-in-camp
+git clone https://github.com/yourusername/learning-in-opencamp.git
+cd learning-in-opencamp
 
 # 安装依赖并编译
 cargo build

@@ -13,8 +13,8 @@ env:
   CARGO_TERM_COLOR: always
   TZ: Asia/Shanghai # 设置时区
   ENCODED_API_URL: "aHR0cHM6Ly9hcGkub3BlbmNhbXAuY24vd2ViL2FwaS9jb3Vyc2VSYW5rL2NyZWF0ZUJ5VGhpcmRUb2tlbg=="
-  TROKEN: "MWExNjE2NmViNGIxNGNhMGFjZmY1NTY4MWNhMjY1ZDU="  
-  CXX_TOKEN: "N2Y3MzFkYjYwOWNkNGZjM2JjMmFlMDA1Mzg2MjU0Y2U=" 
+  TROKEN: "MWExNjE2NmViNGIxNGNhMGFjZmY1NTY4MWNhMjY1ZDU="  # Rust课程token
+  CXX_TOKEN: "N2Y3MzFkYjYwOWNkNGZjM2JjMmFlMDA1Mzg2MjU0Y2U="  # C++课程token
 
 jobs:
   initialize:
@@ -80,16 +80,19 @@ jobs:
     - name: Install xtask dependencies
       run: |
         cargo build --release
+    - name: Create CI outputs directory
+      run: |
+        mkdir -p ci-outputs
     - name: Run exercises evaluation
       run: |
-        cargo xtask eval --course rustlings | tee test_output.txt
+        cargo xtask eval --course rustlings | tee ci-outputs/test_output.txt
       continue-on-error: true
     - name: Parse test results and generate JSON for Exercises
       run: |
         # 创建结果目录
         mkdir -p .github/result
         
-        test_output="test_output.txt"
+        test_output="ci-outputs/test_output.txt"
         json_file=".github/result/exercises_result.json"
         
         # 初始化计数器
@@ -194,16 +197,28 @@ jobs:
     - name: Install xtask dependencies
       run: |
         cargo build --release
+    - name: Install xmake for C++ compilation
+      run: |
+        curl -fsSL https://xmake.io/shget.text | bash
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+    - name: Compile C++ exercises with xmake
+      run: |
+        cd exercises/learning-cxx
+        ~/.local/bin/xmake
+      continue-on-error: true
+    - name: Create CI outputs directory
+      run: |
+        mkdir -p ci-outputs
     - name: Run C++ course evaluation
       run: |
-        cargo run --bin xtask -- eval --course learning-cxx --verbose | tee cxx_test_output.txt
+        cargo run --bin xtask -- eval --course learning-cxx --verbose | tee ci-outputs/cxx_test_output.txt
       continue-on-error: true
     - name: Parse C++ test results and generate JSON
       run: |
         # 创建结果目录
         mkdir -p .github/result
         
-        test_output="cxx_test_output.txt"
+        test_output="ci-outputs/cxx_test_output.txt"
         json_file=".github/result/cxx_result.json"
         
         # 初始化计数器

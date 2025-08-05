@@ -1,0 +1,21 @@
+# CI输出文件
+ci-outputs/
+
+# Rust编译输出
+/target/
+
+# IDE文件
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.log
+
+# 评测结果文件
+eval_result.json
+*.txt
