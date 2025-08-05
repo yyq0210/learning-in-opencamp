@@ -157,7 +157,6 @@ learning-tools/
 │   │   └── setup.rs       # 环境配置
 │   └── Cargo.toml
 ├── environment/           # 环境配置模块
-├── course/               # 课程管理模块
 └── eval_result.json      # 评测结果文件
 ```
 
