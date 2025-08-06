@@ -1,8 +1,7 @@
 # learning-in-opencamp
 OpenCamp 训练营通用学习工具
 
-这是一个用于在本地对多种编程课程练习进行评测的工具，支持 Rust、C++ 等多种语言的课程，无需依赖 GitHub Actions。
-
+这是一个用于在本地对多种编程课程练习进行评测的工具，支持 Rust、C++ 等多种语言的课程。
 ## 功能特点
 
 - 🚀 **多课程支持**: 支持 `learning-lm-rs`、`learning-cxx`、`rustlings` 等多种课程类型
@@ -55,13 +54,13 @@ curl -fsSL https://xmake.io/shget.text | bash
 
 1. 克隆本仓库
 ```bash
-git clone https://github.com/yourusername/learning-tools.git
-cd learning-tools
+git clone https://github.com/yourusername/learning-in-opencamp.git
+cd learning-in-opencamp
 ```
 
 2. 编译项目
 ```bash
-cargo build --release
+cargo build 
 ```
 
 ## 使用方法
