@@ -83,6 +83,9 @@ jobs:
     - name: Create CI outputs directory
       run: |
         mkdir -p ci-outputs
+    - name: Create target directory for xtask
+      run: |
+        mkdir -p target/debug
     - name: Run exercises evaluation
       run: |
         cargo xtask eval --course rustlings | tee ci-outputs/test_output.txt
@@ -132,6 +135,10 @@ jobs:
         # 打印新的 JSON 文件到终端
         cat "$json_file"
       continue-on-error: true
+    - uses: yfblock/os-autograding@master
+      id: autograding
+      with:
+        outputFile: .github/result/exercises_result.json
     - name: Generate summary JSON for Exercises
       run: |
         outfile=".github/result/exercises_result.json"
@@ -205,6 +212,9 @@ jobs:
     - name: Create CI outputs directory
       run: |
         mkdir -p ci-outputs
+    - name: Create target directory for xtask
+      run: |
+        mkdir -p target/debug
     - name: Run C++ course evaluation
       run: |
         cargo run --bin xtask -- eval --course learning-cxx --verbose | tee ci-outputs/cxx_test_output.txt
@@ -254,6 +264,10 @@ jobs:
         # 打印新的 JSON 文件到终端
         cat "$json_file"
       continue-on-error: true
+    - uses: yfblock/os-autograding@master
+      id: autograding
+      with:
+        outputFile: .github/result/cxx_result.json
     - name: Generate summary JSON for C++
       run: |
         outfile=".github/result/cxx_result.json"
