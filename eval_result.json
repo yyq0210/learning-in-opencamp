@@ -2,145 +2,145 @@
   "exercises": [
     {
       "name": "exercise00",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise01",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise02",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise03",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise04",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise05",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise06",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise07",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise08",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise09",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise10",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise11",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise12",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise13",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise14",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise15",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise16",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise17",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise18",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise19",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise20",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise21",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise22",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise23",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise24",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise25",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise26",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise27",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise28",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise29",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise30",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise31",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise32",
-      "result": false
+      "result": true
     },
     {
       "name": "exercise33",
-      "result": false
+      "result": true
     }
   ],
   "statistics": {
     "total_exercations": 34,
-    "total_succeeds": 0,
-    "total_failures": 34,
-    "total_time": 23
+    "total_succeeds": 34,
+    "total_failures": 0,
+    "total_time": 28
   }
 }
